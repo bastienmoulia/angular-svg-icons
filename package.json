@@ -1,0 +1,17 @@
+{
+  "name": "angular-svg-icons",
+  "version": "0.0.1",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/angular": "^1.5.22",
+    "http-server": "^0.9.0",
+    "typescript": "^2.1.4"
+  },
+  "scripts": {
+    "start": "http-server ./ -c1",
+    "build": "tsc"
+  }
+}

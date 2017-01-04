@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "target": "es5",
+    "outDir": "dist"
+  },
+  "files": [
+    "src/angular-svg-icons.ts"
+  ]
+}

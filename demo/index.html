@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>Demo</title>
+</head>
+<body ng-controller="ctrl">
+  Hello world
+  <svg-icon name="'test'"></svg-icon>
+  <script src="../node_modules/angular/angular.js"></script>
+  <script src="../dist/angular-svg-icons.js"></script>
+  <script>
+  angular
+    .module('app', ['angular-svg-icons'])
+    .config(['$svgIconProvider', function($svgIconProvider){
+      $svgIconProvider.spritesFile('toto.svg');
+      $svgIconProvider.svgFolder('svg');
+    }])
+    .controller('ctrl', ['$scope', function($scope) {
+      console.log("ok");
+    }]);
+  </script>
+</body>
+</html>
