@@ -41,8 +41,8 @@ Use the component in the HTML
 
 ## Browsers support
 
-Chrome | Firefox | IE | Edge | Opera | Safari |
---- | --- | --- | --- | --- |
-Latest ✔ | Latest ✔ | 9+ with fallback | 12 with fallback, 13+ ✔ | Latest ✔ | 6+ ✔ |
+| Chrome   | Firefox  | IE               | Edge                    | Opera    | Safari |
+| -------- | -------- | ---------------- | ----------------------- | -------- | ------ |
+| Latest ✔ | Latest ✔ | 9+ with fallback | 12 with fallback, 13+ ✔ | Latest ✔ | 6+ ✔   |
 
 The fallback consists of displaying the individual svg from the directory specified in the config `$svgIconProvider.svgFolder()`.
