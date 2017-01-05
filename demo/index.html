@@ -3,21 +3,30 @@
 <head>
   <meta charset="utf-8">
   <title>Demo</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+  <link rel="stylesheet" href="../dist/angular-svg-icons.css">
+  <style>
+    .flag svg {
+      box-shadow: 0px 0px 2px 1px grey;
+    }
+  </style>
 </head>
-<body ng-controller="ctrl">
-  Hello world
-  <svg-icon name="'test'"></svg-icon>
+<body>
+  <div class="container">
+    <h1 class="text-xs-center display-1">Angular SVG Icons</h1>
+    <svg-icon name="'star'" height="100"></svg-icon>
+    <p class="text-xs-center">
+      Made with <svg-icon name="'heart'" style="color: red"></svg-icon> in <svg-icon name="'france'" height="16" width="24" class="flag"></svg-icon>
+    </p>
+  </div>
   <script src="../node_modules/angular/angular.js"></script>
   <script src="../dist/angular-svg-icons.js"></script>
   <script>
   angular
     .module('app', ['angular-svg-icons'])
     .config(['$svgIconProvider', function($svgIconProvider){
-      $svgIconProvider.spritesFile('toto.svg');
+      $svgIconProvider.spritesFile('symbol/svg/sprite.css.svg');
       $svgIconProvider.svgFolder('svg');
-    }])
-    .controller('ctrl', ['$scope', function($scope) {
-      console.log("ok");
     }]);
   </script>
 </body>

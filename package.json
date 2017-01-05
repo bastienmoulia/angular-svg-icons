@@ -8,10 +8,15 @@
   "devDependencies": {
     "@types/angular": "^1.5.22",
     "http-server": "^0.9.0",
-    "typescript": "^2.1.4"
+    "node-sass": "^4.1.1",
+    "svg-sprite": "^1.3.6",
+    "typescript": "^2.1.4",
+    "uglify-js": "^2.7.5"
   },
   "scripts": {
     "start": "http-server ./ -c1",
-    "build": "tsc"
+    "build": "tsc && npm run sass",
+    "svg-sprite": "svg-sprite -s --dest=demo demo/svg/*.svg",
+    "sass": "node-sass src/angular-svg-icons.scss dist/angular-svg-icons.css"
   }
 }
