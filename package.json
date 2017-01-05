@@ -1,7 +1,9 @@
 {
   "name": "angular-svg-icons",
   "version": "0.0.2",
+  "description": "Angular component to display icons from SVG sprites",
   "license": "MIT",
+  "author": "Bastien Moulia",
   "dependencies": {
     "angular": "^1.6.0"
   },
