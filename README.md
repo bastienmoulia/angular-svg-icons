@@ -10,6 +10,12 @@ Install the package from NPM
 npm install angular-svg-icons
 ```
 
+Add the script to the HTML
+
+``` html
+<script src="node_modules/angular-svg-icons/dist/angular-svg-icons.js"></script>
+```
+
 Add `angular-svg-icons` dependency to your module
 
 ``` js
@@ -30,6 +36,13 @@ Use the component in the HTML
 ``` html
 <svg-icon name="'star'" height="20" width="20"></svg-icon>
 ```
+
+Add the CSS
+
+``` html
+<link rel="stylesheet" href="node_modules/angular-svg-icons/dist/angular-svg-icons.css">
+```
+You can also import the SCSS file from the  `src` folder.
 
 ## Generate the SVG sprites
 
