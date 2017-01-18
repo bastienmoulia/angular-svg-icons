@@ -17,8 +17,9 @@
   },
   "scripts": {
     "start": "http-server ./ -c1",
-    "build": "tsc && npm run sass",
+    "build": "npm run tsc && npm run sass",
     "svg-sprite": "svg-sprite -s --dest=demo demo/svg/*.svg",
+    "tsc": "tsc",
     "sass": "node-sass src/angular-svg-icons.scss dist/angular-svg-icons.css"
   }
 }

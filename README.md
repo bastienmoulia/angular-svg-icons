@@ -27,7 +27,6 @@ Configure the component with the path of the svg sprites file and the folder of 
 ``` js
 angular.module('app').config(['$svgIconProvider', function($svgIconProvider){
   $svgIconProvider.spritesFile('symbol/svg/sprite.css.svg');
-  $svgIconProvider.svgFolder('svg');
 }]);
 ```
 
@@ -42,7 +41,7 @@ Add the CSS
 ``` html
 <link rel="stylesheet" href="node_modules/angular-svg-icons/dist/angular-svg-icons.css">
 ```
-You can also import the SCSS file from the  `src` folder.
+You can also import the SCSS file from the `src` folder.
 
 ## Generate the SVG sprites
 
@@ -58,4 +57,4 @@ You can also import the SCSS file from the  `src` folder.
 | -------- | -------- | ---------------- | ----------------------- | -------- | ------ |
 | Latest ✔ | Latest ✔ | 9+ with fallback | 12 with fallback, 13+ ✔ | Latest ✔ | 6+ ✔   |
 
-The fallback consists of displaying the individual svg from the directory specified in the config `$svgIconProvider.svgFolder()`.
+The fallback consists of an AJAX call to the svg and an inline display of the svg.
