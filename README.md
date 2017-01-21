@@ -57,4 +57,4 @@ You can also import the SCSS file from the `src` folder.
 | -------- | -------- | ---------------- | ----------------------- | -------- | ------ |
 | Latest ✔ | Latest ✔ | 9+ with fallback | 12 with fallback, 13+ ✔ | Latest ✔ | 6+ ✔   |
 
-The fallback consists of an AJAX call to the svg and an inline display of the svg.
+The fallback consists of an AJAX call to the svg and an inline display of the svg sprite.

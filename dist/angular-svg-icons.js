@@ -8,20 +8,18 @@
             this.$sce = $sce;
             this.url = "";
             this.noSupportExternal = detectNoSupportExternal();
-            this.svgContent = "";
         }
         SvgIconController.prototype.$onInit = function () {
-            var _this = this;
             if (this.name) {
-                if (this.noSupportExternal) {
+                if (this.noSupportExternal && document.getElementById("svg-icons-sprite") === null) {
+                    var div = document.createElement("div");
+                    div.style.cssText = "display: none";
+                    div.id = "svg-icons-sprite";
+                    document.body.insertBefore(div, document.body.childNodes[0]);
                     this.$http
                         .get(this.$svgIcon.spritesFile)
                         .then(function (response) {
-                        var parser = new DOMParser();
-                        var doc = parser.parseFromString(response.data, "image/svg+xml");
-                        var image = doc.getElementById(_this.name);
-                        _this.svgContent = _this.$sce.trustAsHtml(image.innerHTML);
-                        _this.svgViewBox = image.getAttribute("viewBox");
+                        document.getElementById("svg-icons-sprite").innerHTML = response.data;
                     });
                 }
                 else {
@@ -75,7 +73,7 @@
         };
     })
         .component("svgIcon", {
-        template: "\n        <svg ng-if=\"svgIcon.url !== '' || svgIcon.svgContent !== ''\" ng-attr-height=\"{{ svgIcon.height }}\" ng-attr-width=\"{{ svgIcon.width }}\" xmlns=\"http://www.w3.org/2000/svg\" ng-attr-view_box=\"{{ svgIcon.svgViewBox }}\">\n          <use ng-if=\"!svgIcon.noSupportExternal\" ng-attr-xlink:href=\"{{ svgIcon.url }}\" xlink:href=\"\"></use>\n          <g ng-if=\"svgIcon.noSupportExternal\" ng-bind-html=\"svgIcon.svgContent\"></g>\n        </svg>\n      ",
+        template: "\n        <svg ng-attr-height=\"{{ svgIcon.height }}\" ng-attr-width=\"{{ svgIcon.width }}\" xmlns=\"http://www.w3.org/2000/svg\">\n          <use ng-if=\"!svgIcon.noSupportExternal\" ng-attr-xlink:href=\"{{ svgIcon.url }}\" xlink:href=\"\"></use>\n          <use ng-if=\"svgIcon.noSupportExternal\" ng-attr-xlink:href=\"{{ '#' + svgIcon.name }}\" xlink:href=\"\"></use>\n        </svg>\n      ",
         controllerAs: "svgIcon",
         controller: SvgIconController,
         bindings: {
