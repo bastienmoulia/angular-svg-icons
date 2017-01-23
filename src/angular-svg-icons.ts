@@ -56,12 +56,12 @@
 
   angular
     .module("angular-svg-icons", [])
-    .provider("$svgIcon", function () {
+    .provider("$svgIcon", function ($sce: angular.ISCEService) {
       let spritesFile: string = "sprites.svg";
       let svgHeight: number = 15;
       return {
         spritesFile: (value: string) => {
-          spritesFile = value;
+          spritesFile = $sce.trustAsResourceUrl(value);
         },
         svgHeight: (value: number) => {
           svgHeight = value;
