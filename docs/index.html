@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>Angular SVG Icons</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+  <link rel="stylesheet" href="../dist/angular-svg-icons.css">
+  <style>
+    .flag svg {
+      box-shadow: 0px 0px 2px 1px grey;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-xs-center display-1">Angular SVG Icons</h1>
+    <h3>SVG Icon without height/width attributes</h3>
+    <pre><code class="html">&lt;svg-icon name="'star'"&gt;&lt;/svg-icon&gt;</code></pre>
+    <svg-icon name="'star'"></svg-icon>
+    <h3>SVG Icon with height attribute</h3>
+    <pre><code class="html">&lt;svg-icon name="'star'" height="50"&gt;&lt;/svg-icon&gt;</code></pre>
+    <svg-icon name="'star'" height="50"></svg-icon>
+    <h3>SVG Icon with width attribute</h3>
+    <pre><code class="html">&lt;svg-icon name="'star'" width="50"&gt;&lt;/svg-icon&gt;</code></pre>
+    <svg-icon name="'star'" width="50"></svg-icon>
+    <h3>SVG Icon with width and height attributes and different ratio</h3>
+    <pre><code class="html">&lt;svg-icon name="'star'" width="100" height="50"&gt;&lt;/svg-icon&gt;</code></pre>
+    <svg-icon name="'star'" width="100" height="50"></svg-icon>
+    <p class="text-xs-center">
+      Made with <svg-icon name="'heart'" style="color: red"></svg-icon> in <svg-icon name="'france'" height="16" class="flag"></svg-icon>
+    </p>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  <script src="../dist/angular-svg-icons.js"></script>
+  <script>
+  angular
+    .module('app', ['angular-svg-icons'])
+    .config(['$svgIconProvider', function($svgIconProvider){
+      $svgIconProvider.spritesFile('symbol/svg/sprite.css.svg');
+    }]);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
